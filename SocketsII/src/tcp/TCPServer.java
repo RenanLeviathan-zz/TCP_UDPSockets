@@ -16,7 +16,7 @@ new BufferedReader(new InputStreamReader(connectionSocket.getInputStream()));
 DataOutputStream outToClient =
 new DataOutputStream(connectionSocket.getOutputStream());
 clientSentence = inFromClient.readLine();
-capitalizedSentence = clientSentence.toUpperCase() + '\n';
+capitalizedSentence = "<html><head></head><body>" clientSentence.toUpperCase() + '</body></html>';
 outToClient.writeBytes(capitalizedSentence);
 }
 }
