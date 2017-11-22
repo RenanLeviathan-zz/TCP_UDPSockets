@@ -1,4 +1,4 @@
-package tcp;
+package main;
 import java.io.*;
 import java.net.*;
 public class TCPClient {
@@ -13,7 +13,7 @@ DataOutputStream outToServer =
 new DataOutputStream(clientSocket.getOutputStream());
 BufferedReader inFromServer =
 new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-request = "GET / HTTP/1.1\r\nHost: 127.0.0.1\r\nConnection: Close";
+request = "GET / HTTP/1.1\r\nHost: 192.168.56.1\r\nConnection: Close";
 outToServer.writeBytes(request);
 modifiedSentence = inFromServer.toString();
 System.out.println("FROM SERVER: " + modifiedSentence);
